@@ -5,9 +5,12 @@
   programs.fish = {
     enable = true;
     shellAbbrs = {
-      rebuild = "sudo nixos-rebuild switch --flake .#nixos";
-      update = "nix flake update";
-      rebuild-test = "sudo nixos-rebuild dry-build --flake .#nixos";
+      rb = "sudo nixos-rebuild switch --flake .#nixos";
+      up = "nix flake update";
+      test = "sudo nixos-rebuild dry-build --flake .#nixos";
+      gs = "git status";
+      gc = "git add . && git commit";
+      gp = "git push";
     };
     shellAliases = {
       ll = "ls -la";
