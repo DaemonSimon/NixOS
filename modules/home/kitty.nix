@@ -13,7 +13,13 @@
       enable_audio_bell = "no";
     };
     extraConfig = ''
-      # Your personal kitty settings go here
+      # Custom keyboard shortcuts - launch fish commands
+      # Launch new terminal with rebuild
+      map ctrl+shift+r launch --type=overlay fish -c "cd /etc/nixos && sudo nixos-rebuild switch --flake .#nixos"
+      # Launch new terminal with update
+      map ctrl+shift+u launch --type=overlay fish -c "cd /etc/nixos && nix flake update"
+      # Launch new terminal with test rebuild
+      map ctrl+shift+t launch --type=overlay fish -c "cd /etc/nixos && sudo nixos-rebuild dry-build --flake .#nixos"
     '';
   };
 }
