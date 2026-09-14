@@ -5,11 +5,10 @@
   programs.fish = {
     enable = true;
     shellAbbrs = {
-      rb = "sudo nixos-rebuild switch --flake .#nixos";
-      up = "nix flake update";
-      test = "sudo nixos-rebuild dry-build --flake .#nixos";
+      rebuild = "sudo nixos-rebuild switch --flake .#nixos";
+      update = "nix flake update";
+      rebuild-test = "sudo nixos-rebuild dry-build --flake .#nixos";
       gs = "git status";
-      gc = "git add . && git commit";
       gp = "git push";
     };
     shellAliases = {
@@ -18,5 +17,15 @@
     interactiveShellInit = ''
       echo "Welcome back Simon!"
     '';
+    functions = {
+      gac = {
+        description = "git add all and commit with message";
+        body = "git add . && git commit -m \"$argv\"";
+      };
+      fullpush = {
+        description = "rebuild, git add, commit, push";
+        body = "git add . && git commit -m \"$argv\" && git push";
+      };
+    };
   };
 }
