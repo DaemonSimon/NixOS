@@ -6,6 +6,7 @@
     ./packages.nix
     ./hypr.nix
     ./shell.nix
+    ./fish.nix
   ];
 
   # Your name and where your room is - MUST match users.users.simon in nixos/users.nix
