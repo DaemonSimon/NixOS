@@ -7,6 +7,7 @@
     ./hypr.nix
     ./shell.nix
     ./fish.nix
+    ./kitty.nix
   ];
 
   # Your name and where your room is - MUST match users.users.simon in nixos/users.nix
