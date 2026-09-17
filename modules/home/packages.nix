@@ -5,6 +5,7 @@
 
 {
   home.packages = with pkgs; [
+	opencode
 	waybar
 	yazi
 	grim
