@@ -11,6 +11,8 @@
   # Host name - same as before: networking.hostName = "nixos"
   networking.hostName = "nixos";
 
+  hardware.bluetooth.enable = true;
+
   # Do NOT change this - from configuration.nix:157
   system.stateVersion = "26.05";
 }
